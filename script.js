@@ -1,20 +1,27 @@
 // Scroll to top
-const scrollBtn = document.getElementById('scrollTop');
+document.addEventListener("DOMContentLoaded", () => {
+    const scrollBtn = document.getElementById("scrollTop");
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollBtn.classList.add('visible');
-    } else {
-        scrollBtn.classList.remove('visible');
-    }
-});
+    window.addEventListener("scroll", () => {
+        console.log("Scroll event fired. ScrollY:", window.scrollY);
+        if (window.scrollY > 300) {
+            console.log("Making button visible");
+            scrollBtn.classList.add("visible");
+        } else {
+            console.log("Hiding button");
+            scrollBtn.classList.remove("visible");
+        }
+    });
 
-scrollBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    scrollBtn.addEventListener("click", () => {
+        console.log("Scroll button clicked");
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
     });
 });
+
 
 // Hamburger menu
 const hamburger = document.getElementById('hamburger');
